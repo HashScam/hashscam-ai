@@ -6,9 +6,8 @@ from load_creds import load_creds
 creds = load_creds()
 
 app = Flask(__name__)
-#genai.configure(credentials=creds)
-genai.configure(api_key="YOUR_API_KEY")
-model = genai.GenerativeModel("gemini-1.5-flash") # insert base or your tuned models here
+genai.configure(credentials=creds)
+model = genai.GenerativeModel("tunedModels/hsv25-9xx4by8j27z7") # insert base or your tuned models here
 page_id = 'YOUR_PAGE_ID'
 access_token = 'YOUR_ACCESS_TOKEN'
 graph_api = f'https://graph.facebook.com/v20.0/{page_id}/messages?access_token={access_token}'
